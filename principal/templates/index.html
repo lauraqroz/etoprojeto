@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block dado_central %}
+
+<section class="home" id="home">
+    <div class="content" >
+        <h3 style="color: aliceblue;">Agricultura familiar<span> sustentável</span> no Alto Oeste Potiguar</h3>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <h1 class="heading">Mural de <span>avisos</span></h1>
+    
+    
+    <div class="box-container">
+        <div class="box">
+            <img src="{% static 'assets/images/notas.png' %}" alt="">
+            <h3>Pedidos</h3>
+            <p>Os pedidos devem ser feitos entre segunda-feira a quarta-feira</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'assets/images/entrega.png' %}" alt="">
+            <h3>Entrega</h3>
+            <p>Entrega grátis para São Miguel ou combinar retirada. <br>*Consultar taxa de entrega para cidades vizinhas</p>
+        </div>
+        <div class="box">
+            <img src="{% static 'assets/images/formadepag.png' %}" alt="">
+            <h3>Pagamento</h3>
+            <p>O ato do pagamento deve ser realizado mediante a entrega. <br>Aceitamos cartões e dinheiro em espécie.</p>
+        </div>
+    </div>
+</section>
+
+<br>
+{% endblock %}

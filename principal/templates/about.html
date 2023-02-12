@@ -1,0 +1,54 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+<!--USAR ESSA PARTE PARA O SOBRE NÓS-->
+{% block dado_central %}
+
+<section class="sobre" id="sobre">
+    <h1 class="heading"><br><br>Sobre nós</h1>
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'assets/images/belamaura.jpeg' %}" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i> by Isabela</a>
+                    <a href="#"> <i class="fas fa-calendar"></i> 18 de agosto</a>
+                </div>
+                <h3>Desenvolvedoras</h3>
+                <p>Oi, somos Isabela Andrade (19) e Laura Beatriz (19), concluintes do Curso Técnico de Informática, integrado ao
+                     Ensino Médio, no IFRN - campus Pau dos Ferros. Desenvolvemos esse site como contribuição para um projeto que envolve agroecologia e economia solidária.</p>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'assets/images/proj.jpeg' %}" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i> by Laura</a>
+                    <a href="#"> <i class="fas fa-calendar"></i> 1 de agosto</a>
+                </div>
+                <h3>Sobre o projeto</h3>
+                <p>Diante da importância da agroecologia e da economia solidária, ainda mais evidente no atual cenário de crise humanitária e ambiental, este projeto tem o intuito de contribuir para a construção de experiências junto a famílias agricultoras da região conhecida como Alto Oeste do Estado do Rio Grande do Norte, em que fica o campus de Pau dos Ferros do IFRN.</p>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'assets/images/fruit.jpeg' %}" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i> by Laura</a>
+                    <a href="#"> <i class="fas fa-calendar"></i> 1 de agosto</a>
+                </div>
+                <h3>O que é Ivorá?</h3>
+                <p>Ivorá é uma palavra de origem indígena, que significa Rio da Praia Formosa.</p>
+                
+            </div>
+        </div>
+</section>
+
+{% endblock %}

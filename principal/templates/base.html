@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivorá</title>
+    
+    <!--importação do css-->
+    
+    <link rel="stylesheet" text="text/css" href="{% static 'assets/css/style.css' %}">
+    <!--importação de fonte-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    
+    
+    
+</head>
+
+<body>
+
+<header class="header">
+    <!-- Bloco com a logo da cidade -->
+    {% block logo %} <img src="{% static 'assets/images/ivora.png' %}" alt="" class="logo"> {% endblock %}
+        <nav class="navbar">
+            <a href="{% url 'index' %}">Início</a>
+            <a href="{% url 'mercadoria' %}">Produtos</a>
+            <a href="{% url 'about' %}">Sobre nós</a>
+        </nav>
+
+      <div class="icons"> 
+      
+        <div class="fas fa-shopping-cart " id="cart-btn"></div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Deslogar</a>
+        {% else %}
+        <!--cadastro ao inves de login-->
+        <a href="{% url 'login' %}" class="btn" ><div class="fas fa-user " id="login-btn"></div> Entrar/Cadastrar </a>
+        {% endif %}
+           
+        </div>
+
+        <!--  <form action="" class="search-form">
+            <input type="search" id="search-box" class="box" placeholder="Pesquise aqui...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="shopping-cart">
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="{% static 'assets/image/cart-img-1.png' %}" alt="">
+                <div class="content">
+                    <h3>Melância</h3>
+                    <span class="preço">R$10,00/-</span>                   
+                    <span class="quantidade">qntd : 1</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="image/cart-img-2.png" alt="">
+                <div class="content">
+                    <h3>Cebola</h3>
+                    <span class="preço">R$10,00/-</span>                   
+                    <span class="quantidade">qntd : 1</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="image/cart-img-3.png" alt="">
+                <div class="content">
+                    <h3>Frango (kg)</h3>
+                    <span class="preço">R$10,00/-</span>                   
+                    <span class="quantidade">qntd : 1</span>
+                </div>
+            </div>
+            <div class="total"> Total: R$30,00/-</div>
+            <a href="#" class="btn">Continuar</a>
+        </div>
+
+        <form action="" class="login-form">
+            <h3>Login now</h3>
+            <input type="email" placeholder="seu email" class="box">
+            <input type="password" placeholder="sua senha" class="box">
+            <p>esqueci minha senha <a href="#">clique aqui</a></p>
+            <p>não tenho conta <a href="#">crie agora</a></p>
+
+            <input type="submit" value="Entre agora" class="btn">
+        </form>-->
+</header>
+
+    <div class="container mt-4">
+        {% block dado_central %}
+
+        {% endblock %}
+
+    </div>
+
+<section class="footer">
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static 'assets/images/ivoraesc.png' %}" alt="">
+            <p>Alimento de verdade!</p>
+            <div class="share">
+                <a href="https://instagram.com/feiraagroecologica.pdf?igshid=NTdlMDg3MTY=" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-whatsapp"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3> Contato </h3>
+                <a href="#" class="links"> <i class="fas fa-phone"></i> +55 (84) 99993-9659</a>
+                <a href="#" class="links"> <i class="fas fa-envelope"></i> pipipipopo@gmail.com</a>
+                <a href="https://www.google.com.br/maps/place/S%C3%A3o+Miguel,+RN,+59920-000/@-6.2057735,-38.5242787,13z/data=!3m1!4b1!4m5!3m4!1s0x7a4ae2fdc5318ad:0x1a2e86a420ca538e!8m2!3d-6.2119236!4d-38.4966313" class="links"> <i class="fas fa-map-marker-alt"></i> São Miguel - RN</a>
+        </div>
+
+        <div class="box">
+            <h3> Menu</h3>
+                <a href="{% url 'index' %}" class="links"> <i class="fas fa-arrow-right"></i> Home</a>
+                <a href="{% url 'mercadoria' %}" class="links"> <i class="fas fa-arrow-right"></i> Produtos</a>
+                <a href="{% url 'about' %}" class="links"> <i class="fas fa-arrow-right"></i> Sobre Nós</a>  
+        </div>
+
+        
+    </div>
+
+    </div>
+                      
+</section>
+
+
+
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="{% static 'assets/js/jquery-1.2.6.pack.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/js/jquery.maskedinput-1.1.4.pack.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
+
+    <!-- custom js file link  -->
+    
+</body>
+</html>
